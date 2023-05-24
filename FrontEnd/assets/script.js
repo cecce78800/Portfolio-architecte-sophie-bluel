@@ -16,7 +16,7 @@ function createButton(category) {
     //
 }
 
-
+// réccupération des categories pour créer les boutons + création du bouton "tous"
 const categorieCollect = fetch("http://localhost:5678/api/categories")
     .then(reponse => reponse.json())
     .then(categories => {
