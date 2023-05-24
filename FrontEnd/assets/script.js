@@ -16,14 +16,15 @@ function createButton(category) {
     //
 }
 
+
 const categorieCollect = fetch("http://localhost:5678/api/categories")
     .then(reponse => reponse.json())
     .then(categories => {
         categories.forEach((category, index) => {
-            if(index === 0) { // index = au premier tour de boucle donc au 3 boutons , pour créer le bouton "tous"
+            if (index === 0) { // index = au premier tour de boucle donc au 3 boutons , pour créer le bouton "tous"
                 createButton('Tous')
             }
-        createButton(category.name)
+            createButton(category.name)
         })
     })
 
@@ -65,13 +66,4 @@ const imgCollect = fetch("http://localhost:5678/api/works") // méthode fetch qu
 
 
 // dans la fonction: ajouer une 
-
-
-
-
-
-
-
-
-
 
