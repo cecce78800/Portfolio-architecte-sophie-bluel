@@ -12,6 +12,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./assets/script.js" defer></script>
+	<script src="./assets/modal.js" defer></script>
 </head>
 
 <body>
@@ -21,7 +22,8 @@
 			<ul>
 				<li>projets</li>
 				<li>contact</li>
-				<li>login</li>
+				<li id="myButton"><a href="./login.html">login</a></li>
+
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
@@ -70,6 +72,50 @@
 			</ul>
 		</nav>
 	</footer>
+
+
+
+
+
+
+
+	<!-- MODAL -->
+	<section class="modal">
+
+		<header class="header-container">
+			<div class="header-title">
+				<h1 class="header-name header-title-style">Sophie Bluel</h1>
+				<p class="header-job header-title-style">Architecte d'intérieur</p>
+			</div>
+			<ul class="header-menu">
+				<li>projets</li>
+				<li>contact</li>
+				<li>login</li>
+				<li><img class="header-icon" src="./assets/icons/instagram.png" alt="Icone Instagram"></li>
+			</ul>
+		</header>
+
+		<section class="form-container">
+			<h2>Log In</h2>
+			<form action="#" method="post">
+				<label for="name">Nom</label>
+				<input type="text" name="name" id="name">
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email">
+				<input type="submit" value="Envoyer" class="form-button">
+			</form>
+			<a href="#">Mot de passe oublié</a>
+		</section>
+
+		<footer>
+			<nav>
+				<ul>
+					<li>Mentions Légales</li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+
 </body>
 
 </html>
