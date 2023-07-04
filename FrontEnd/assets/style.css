@@ -379,7 +379,7 @@ a {
 }
 
 /* Formulaire */
-#form-container {
+.form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -387,12 +387,12 @@ a {
     margin-bottom: 300px;
 }
 
-#form-container form {
+.form-container form {
     display: flex;
     flex-direction: column;
 }
 
-#form-container input {
+.form-container input {
     width: 380px;
     height: 50px;
     font-size: 1.2em;
@@ -417,7 +417,7 @@ input[type="submit"] {
     border: transparent;
 }
 
-#form-container h2 {
+.form-container h2 {
     font-family: Syne;
     font-size: 30px;
     font-weight: 700;
@@ -432,7 +432,7 @@ input[type="submit"] {
     color: #FFFFFF;
 }
 
-#form-container a {
+.form-container a {
     color: #3D3D3D;
 }
 

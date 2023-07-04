@@ -33,7 +33,7 @@ const categorieCollect = fetch("http://localhost:5678/api/categories")
     .then(categories => {
         categories.forEach((category, index) => {
             if (index === 0) { // index = au premier tour de boucle des 3 boutons , permet de créer le bouton "tous"
-                createButton('Tous')
+                createButton('Tous', "");
             }
             createButton(category.name, category.id);
 
