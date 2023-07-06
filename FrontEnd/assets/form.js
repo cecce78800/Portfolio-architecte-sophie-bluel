@@ -37,10 +37,8 @@ form.addEventListener("submit", function (event) {
                             });
                     } else if (response.status === 401) {
                         paragraph.innerHTML = "Erreur de mot de passe";
-                        alert("hahaha");
                     } else if (response.status === 404) {
                         paragraph.innerHTML = "Erreur d’identifiant";
-                        alert("hihihi");
                     } else {
                         paragraph.innerHTML = "Erreur inconnue";
                     }
