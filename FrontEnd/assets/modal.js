@@ -1,7 +1,6 @@
 
 // LISTE DES CHOSES NECESSAIRE POUR LA MODAL
 
-// Fonction pour ouvrir la deuxième modale
 // Fonction pour réinitialiser l'état des modales
 // Appel à l'API
 // Fonction de suppression des éléments de la galerie
@@ -57,17 +56,24 @@ const imgCollectModal = fetch("http://localhost:5678/api/works")
 
 
 
-// Ajout du bouton
-const addPictureBtn = document.createElement('button');
+// Réccupérer élément pour le modal2
 const modalContent = document.querySelector('.modal-content');
 const myModal2 = document.getElementById('modal2');
 const myCloseButton2 = document.querySelector('.close-button2');
-const myReturnButton = document.querySelector('.return-buton');
+const myReturnButton = document.querySelector('.return-button');
 
-
+// Ajout du bouton "ajout de photo"
+const addPictureBtn = document.createElement('button');
 addPictureBtn.textContent = 'Ajouter une photo';
 addPictureBtn.classList.add('btn-add-picture');
 modalContent.appendChild(addPictureBtn);
+
+//ajout p "supprimer la gallerie"
+const paragraphModal = document.createElement('p');
+paragraphModal.textContent = 'Supprimer la gallerie';
+paragraphModal.classList.add('paragraph-modal');
+modalContent.appendChild(paragraphModal);
+
 
 //function pour ouvrir le modal2 
 function openModal2() {
@@ -76,7 +82,7 @@ function openModal2() {
 }
 
 // Fonction fermeture du modal2
-function closeModal2 () {
+function closeModal2() {
   myModal2.style.display = "none";
 }
 
@@ -86,6 +92,20 @@ function returnModal() {
   myModal2.style.display = 'none';
 }
 
-addPictureBtn.addEventListener('click', openModal2);
+addPictureBtn2.addEventListener('click', openModal2);
 myCloseButton2.addEventListener('click', closeModal2);
 myReturnButton.addEventListener('click', returnModal);
+
+// Bouton pour ajouter photo
+const addPictureBtn2 = document.querySelector('.add-picture-Btn');
+const pictureInput = document.querySelector('.photo-input');
+
+addPictureBtn2.addEventListener('click', function() {
+  pictureInput.click();
+});
+
+pictureInput.addEventListener('change', function() {
+  const selectedPhoto = pictureInput.files[0];
+  // Faire quelque chose avec le fichier sélectionné, par exemple l'afficher ou l'envoyer vers un serveur
+});
+

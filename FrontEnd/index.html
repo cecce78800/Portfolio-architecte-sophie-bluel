@@ -13,16 +13,21 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./assets/script.js" defer></script>
 	<script src="./assets/modal.js" defer></script>
+	<!-- <script src="https://use.fontawesome.com/d9ed25f529.js" defer></script>-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
 </head>
 
 <body>
+
+
+
 	<header>
 		<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
 		<nav>
 			<ul>
 				<li>projets</li>
 				<li>contact</li>
-				<li id="myButton"><a href="./login.html">login</a></li>
+				<li><a href="./login.html">login</a></li>
 
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
@@ -45,7 +50,14 @@
 			</article>
 		</section>
 		<section id="portfolio">
-			<h2>Mes Projets</h2>
+			<div class="title">
+				<h2>Mes Projets</h2>
+				<div>
+					<i class="fa-duotone fa-pen-to-square"></i>
+					<button id="openModalBtn">modifier</button>
+				</div>
+			</div>
+
 			<div class="filtres"></div>
 			<div class="gallery">
 			</div>
@@ -65,6 +77,51 @@
 		</section>
 	</main>
 
+
+	<!-- MODAL -->
+
+	<div id="modal" class="modal work-modal">
+		<div class="modal-content">
+			<div class="title-modal">
+				<h3>Galerie photo</h3>
+				<i class="fa-solid fa-xmark close-button"></i>
+			</div>
+			<div class="modal-gallery"></div>
+
+		</div>
+	</div>
+
+
+	<!-- MODAL2 -->
+
+	<div id="modal2">
+		<div class="modal-content2">
+			<div class="modal2-header">
+				<i class="fa-solid fa-arrow-left return-button"></i>
+				<i class="fa-solid fa-xmark close-button2"></i>
+				<h3>Ajout photo</h3>
+			</div>
+			<div class="modal2-main">
+				<div class="modal2-picture">
+					<i class="fa-duotone fa-image"></i>
+					<button class="add-picture-Btn"> + Ajouter une photo</button>
+					<input type="file" class="photo-input" style="display: none;">
+					<p>jpg, png: 4mo max</p>
+				</div>
+				<div class="modal2-form">
+					<form action="#" method="post">
+						<label for="name">Nom</label>
+						<input type="text" name="titre" id="title-input">
+						<select name="" id=""></select>
+						<input type="submit" value="Valider" class="modal2-form-button">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 	<footer>
 		<nav>
 			<ul>
@@ -73,48 +130,6 @@
 		</nav>
 	</footer>
 
-
-
-
-
-
-
-	<!-- MODAL -->
-	<section class="modal">
-
-		<header class="header-container">
-			<div class="header-title">
-				<h1 class="header-name header-title-style">Sophie Bluel</h1>
-				<p class="header-job header-title-style">Architecte d'intérieur</p>
-			</div>
-			<ul class="header-menu">
-				<li>projets</li>
-				<li>contact</li>
-				<li>login</li>
-				<li><img class="header-icon" src="./assets/icons/instagram.png" alt="Icone Instagram"></li>
-			</ul>
-		</header>
-
-		<section class="form-container">
-			<h2>Log In</h2>
-			<form action="#" method="post">
-				<label for="name">Nom</label>
-				<input type="text" name="name" id="name">
-				<label for="email">Email</label>
-				<input type="email" name="email" id="email">
-				<input type="submit" value="Envoyer" class="form-button">
-			</form>
-			<a href="#">Mot de passe oublié</a>
-		</section>
-
-		<footer>
-			<nav>
-				<ul>
-					<li>Mentions Légales</li>
-				</ul>
-			</nav>
-		</footer>
-	</section>
 
 </body>
 
