@@ -223,6 +223,7 @@ li:hover {
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
+	margin-right: 20px;
 }
 
 .gallery {
@@ -475,17 +476,23 @@ footer nav ul {
 
 #portfolio i {
 	color: #3D3D3D;
-
 }
 
 #openModalBtn {
+	display: flex;
+	align-items: center;
+	height: 30px;
+}
+#openModalBtn button {
 	border: none;
 	background-color: #FFFFFF;
 	font-size: 14px;
 	color: #3D3D3D;
+	width: 84px;
+	height: 18px;
+	padding: 0;
+	
 }
-
-
 
 .modal {
 	display: none;
@@ -498,7 +505,6 @@ footer nav ul {
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.5);
 }
-
 
 .modal-content {
 	background-color: #fefefe;
@@ -539,7 +545,7 @@ footer nav ul {
 .modal-gallery {
 	display: flex;
 	flex-wrap: wrap;
-	overflow: visible;
+	justify-content: center;
 	width: 70%;
 	margin-bottom: 30px;
 	padding-bottom: 30px;
@@ -571,30 +577,28 @@ footer nav ul {
 }
 
 .close-button {
-	color: #aaa;
+	color: #000000;
 	float: right;
-	font-size: 28px;
+	font-size: 24px;
 	font-weight: bold;
 }
 
-.close-button:hover,
-.close-button:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
-}
 
 /*MODAL2*/
 #modal2 {
 	display: none;
 	position: fixed;
 	z-index: 1;
-	left: 0;
-	top: 0;
 	width: 100%;
 	height: 100%;
 	overflow: auto;
 	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal2 h3 {
+	font-size: 28px;
+	font-family: 'Work Sans';
+	margin-bottom: 20px;
 }
 
 .modal-content2 {
@@ -604,7 +608,7 @@ footer nav ul {
 	border: 1px solid #888;
 	max-width: 730px;
 	width: 50%;
-	height: 500px;
+	height: 400px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -622,21 +626,46 @@ footer nav ul {
 	justify-content: center;
 }
 
-.modal2-picture button {
-	border-radius: 20px;
+.modal2-picture i {
+	font-size: 70px;
+	background: #E8F1F6;
+	margin-top: 10px;
+	color: lightgrey;
+	stroke-width: 2px;
+	/* Remplacez la valeur par celle souhaitée */
+}
+
+.modal2-picture p {
+	margin-top: 10px;
+	margin-bottom: 25px;
+	font-size: 12px;
+	color: #444444;
+}
+
+.add-picture-Btn2 {
 	border: none;
+	width: 173px;
+	height: 36px;
+	border-radius: 50px;
+	background-color: #D6E0E6;
+	color: #3A779A;
+	margin-top: 30px;
+}
+
+.modal2-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.modal2-form-button {
+	background-color: #D6E0E6;
 }
 
 .close-button2 {
-	color: #aaa;
+	color: #000000;
 	float: right;
-	font-size: 28px;
+	font-size: 24px;
 	font-weight: bold;
 }
 
-.close-button2:hover,
-.close-button2:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
-}
+

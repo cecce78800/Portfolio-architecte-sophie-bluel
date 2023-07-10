@@ -13,8 +13,11 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<script src="./assets/script.js" defer></script>
 	<script src="./assets/modal.js" defer></script>
-	<!-- <script src="https://use.fontawesome.com/d9ed25f529.js" defer></script>-->
+	<script src="https://use.fontawesome.com/d9ed25f529.js" defer></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -51,10 +54,10 @@
 		</section>
 		<section id="portfolio">
 			<div class="title">
-				<h2>Mes Projets</h2>
-				<div>
-					<i class="fa-duotone fa-pen-to-square"></i>
-					<button id="openModalBtn">modifier</button>
+				<h2 class="portfolio-h2">Mes Projets</h2>
+				<div id="openModalBtn">
+					<i class="fa-regular fa-pen-to-square"></i>
+					<button >modifier</button>
 				</div>
 			</div>
 
@@ -103,17 +106,15 @@
 			</div>
 			<div class="modal2-main">
 				<div class="modal2-picture">
-					<i class="fa-duotone fa-image"></i>
-					<button class="add-picture-Btn"> + Ajouter une photo</button>
+					<i class="fa-regular fa-image"></i>
+					<button class="add-picture-Btn2"> + Ajouter une photo</button>
 					<input type="file" class="photo-input" style="display: none;">
 					<p>jpg, png: 4mo max</p>
 				</div>
 				<div class="modal2-form">
-					<form action="#" method="post">
-						<label for="name">Nom</label>
+					<form action="#" method="post" class="form-container-modal2">
+						<label for="titre">Titre</label>
 						<input type="text" name="titre" id="title-input">
-						<select name="" id=""></select>
-						<input type="submit" value="Valider" class="modal2-form-button">
 					</form>
 				</div>
 			</div>

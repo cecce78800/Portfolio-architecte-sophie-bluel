@@ -1,14 +1,4 @@
 
-// LISTE DES CHOSES NECESSAIRE POUR LA MODAL
-
-// Fonction pour réinitialiser l'état des modales
-// Appel à l'API
-// Fonction de suppression des éléments de la galerie
-// Afficher l'image miniature sélectionnée
-//F onction ajouter un élément a la gallerie
-// icon poubelle <i class="fa-regular fa-trash-can"></i>
-
-
 // Réccuperation éléments modal1
 const myModal = document.getElementById('modal');
 const myModalButton = document.getElementById('openModalBtn');
@@ -18,7 +8,7 @@ const myCloseButton = document.querySelector('.close-button');
 // Fonction ouverture du modal1
 function openModal() {
   myModal.style.display = "block";
-}
+  }
 
 // Fonction fermeture du modal1
 function closeModal() {
@@ -28,6 +18,9 @@ function closeModal() {
 // Ajout des écouteurs d'événements du modal1
 myModalButton.addEventListener("click", openModal);
 myCloseButton.addEventListener("click", closeModal);
+
+// Réccupérer l'élément body
+const body = document.querySelector('body');
 
 
 // Réccuperation des work pour le modal1
@@ -62,11 +55,12 @@ const myModal2 = document.getElementById('modal2');
 const myCloseButton2 = document.querySelector('.close-button2');
 const myReturnButton = document.querySelector('.return-button');
 
-// Ajout du bouton "ajout de photo"
+// Ajout du bouton "ajout de photo" modal1
 const addPictureBtn = document.createElement('button');
 addPictureBtn.textContent = 'Ajouter une photo';
 addPictureBtn.classList.add('btn-add-picture');
 modalContent.appendChild(addPictureBtn);
+
 
 //ajout p "supprimer la gallerie"
 const paragraphModal = document.createElement('p');
@@ -92,12 +86,12 @@ function returnModal() {
   myModal2.style.display = 'none';
 }
 
-addPictureBtn2.addEventListener('click', openModal2);
+addPictureBtn.addEventListener('click', openModal2);
 myCloseButton2.addEventListener('click', closeModal2);
 myReturnButton.addEventListener('click', returnModal);
 
-// Bouton pour ajouter photo
-const addPictureBtn2 = document.querySelector('.add-picture-Btn');
+// Bouton pour ajouter photo modal2
+const addPictureBtn2 = document.querySelector('.add-picture-Btn2');
 const pictureInput = document.querySelector('.photo-input');
 
 addPictureBtn2.addEventListener('click', function() {
@@ -109,3 +103,65 @@ pictureInput.addEventListener('change', function() {
   // Faire quelque chose avec le fichier sélectionné, par exemple l'afficher ou l'envoyer vers un serveur
 });
 
+// Formulaire modal2
+const formContainer = document.querySelector('.form-container-modal2');
+const labelCategory = document.createElement('label')
+const inputCategory = document.createElement('select');
+const optionInputCategory = document.createElement('option');
+
+labelCategory.textContent = 'Categorie';
+
+inputCategory.classList.add('input-category');
+inputCategory.classList.add('label-category');
+optionInputCategory.classList.add('option-input-category');
+
+
+formContainer.appendChild(labelCategory)
+inputCategory.appendChild(optionInputCategory);
+formContainer.appendChild(inputCategory);
+
+
+
+fetch("http://localhost:5678/api/categories")
+  .then(response => response.json())
+  .then(categories => {
+    categories.forEach(category => {
+      const option = document.createElement('option');
+      option.value = category.id;
+      option.textContent = category.name;
+      inputCategory.appendChild(option);
+    });
+  });
+
+// Fonction pour fermer les modals quand on clique à l'extérieur
+function clickOnBody() {
+  myModal.style.display = "none";
+  myModal2.style.display = "none";
+}
+
+// Ajout de l'écouteur d'événement de clic sur le body
+body.addEventListener('click', clickOnBody);
+
+
+// // Fonction pour fermer les modal quand on clic à coté 
+//  const closeBody = document.querySelector('body');
+
+//  function clickOnBody() {
+//    if( closeBody ) {
+//      myModal.style.display = "none";
+//  } else {
+//    myModal2.style.display = "none";
+
+//  }
+//  closeBody.addEventListener('click', clickOnBody);
+
+
+
+    // function generateCategoryOptions(categories) {
+    //   categories.forEach(category => {
+    //     const option = document.createElement('option');
+    //     option.value = category.id;
+    //     option.textContent = category.name;
+    //     categorySelect.appendChild(option);
+    //   });
+    // }

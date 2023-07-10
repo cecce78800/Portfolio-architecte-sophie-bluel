@@ -32,8 +32,7 @@ form.addEventListener("submit", function (event) {
                             .then((myBody) => {
                                 localStorage.setItem("token", myBody.token);
                                 console.log(myBody);
-                                window.location.href = "http://localhost:5500/";
-
+                                window.location.href = "./index.html";
                             });
                     } else if (response.status === 401) {
                         paragraph.innerHTML = "Erreur de mot de passe";
@@ -49,20 +48,20 @@ form.addEventListener("submit", function (event) {
     }
 });
 
-localStorage.setItem("token", "mon-token");
+// localStorage.setItem("token", "mon-token");
 
-const url = "http://localhost:5678/api/users/login";
-const headers = {};
+// const url = "http://localhost:5678/api/users/login";
+// const headers = {};
 
-fetch(url, {
-    headers: headers
-})
-    .then((response) => {
-        // Traiter la réponse
-    })
-    .catch((error) => {
-        // Gérer les erreurs
-    });
+// fetch(url, {
+//     headers: headers
+// })
+//     .then((response) => {
+//         // Traiter la réponse
+//     })
+//     .catch((error) => {
+//         // Gérer les erreurs
+//     });
 
-// Suppression du token
-localStorage.removeItem("token");
+// // Suppression du token
+// localStorage.removeItem("token");
