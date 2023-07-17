@@ -54,6 +54,7 @@ const modalContent = document.querySelector('.modal-content');
 const myModal2 = document.getElementById('modal2');
 const myCloseButton2 = document.querySelector('.close-button2');
 const myReturnButton = document.querySelector('.return-button');
+const modalContent2 = document.querySelector('.modal-content2')
 
 // Ajout du bouton "ajout de photo" modal1
 const addPictureBtn = document.createElement('button');
@@ -133,17 +134,9 @@ fetch("http://localhost:5678/api/categories")
     });
   });
 
-// Fonction pour fermer les modals quand on clique à l'extérieur
-function clickOnBody() {
-  myModal.style.display = "none";
-  myModal2.style.display = "none";
-}
-
-// Ajout de l'écouteur d'événement de clic sur le body
-body.addEventListener('click', clickOnBody);
 
 
-// // Fonction pour fermer les modal quand on clic à coté 
+// Fonction pour fermer les modal quand on clic à coté 
 //  const closeBody = document.querySelector('body');
 
 //  function clickOnBody() {
@@ -156,12 +149,20 @@ body.addEventListener('click', clickOnBody);
 //  closeBody.addEventListener('click', clickOnBody);
 
 
+// Fonction pour fermer les modals quand on clique à l'extérieur
+// function clickOnBody() {
+//   myModal.style.display = "none";
+//   myModal2.style.display = "none";
+// }
 
-    // function generateCategoryOptions(categories) {
-    //   categories.forEach(category => {
-    //     const option = document.createElement('option');
-    //     option.value = category.id;
-    //     option.textContent = category.name;
-    //     categorySelect.appendChild(option);
-    //   });
-    // }
+// // Ajout de l'écouteur d'événement de clic sur le body
+// body.addEventListener('click', clickOnBody);
+
+//     // function generateCategoryOptions(categories) {
+//     //   categories.forEach(category => {
+//     //     const option = document.createElement('option');
+//     //     option.value = category.id;
+//     //     option.textContent = category.name;
+//     //     categorySelect.appendChild(option);
+//     //   });
+//     // }
