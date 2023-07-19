@@ -8,7 +8,7 @@ const myCloseButton = document.querySelector('.close-button');
 // Fonction ouverture du modal1
 function openModal() {
   myModal.style.display = "block";
-  }
+}
 
 // Fonction fermeture du modal1
 function closeModal() {
@@ -32,20 +32,49 @@ const imgCollectModal = fetch("http://localhost:5678/api/works")
       // créer balises pour accueillir les images du portfolio
       const modalGallery = document.querySelector('.modal-gallery');
       const maDiv = document.createElement('div');
+      const trash = document.createElement('i');
       const myImg = document.createElement('img');
       const myTitle = document.createElement('p');
+
+      trash.dataset.id = element.id
+      trash.addEventListener('click', deleteWork);
 
       myImg.src = element.imageUrl
       myTitle.innerHTML = "éditer"
       maDiv.dataset.categorie = element.categoryId
 
-      maDiv.classList.add('work-modal')
+      trash.classList.add('fa-solid', 'fa-trash-can');
+      maDiv.classList.add('work-modal');
 
       modalGallery.appendChild(maDiv);
       maDiv.appendChild(myImg);
       maDiv.appendChild(myTitle);
+      maDiv.appendChild(trash);
     });
   });
+
+  // Fonction pour supprimer les works
+  function deleteWork(e) {
+
+    fetch(`http://localhost:5678/api/works/e.target.dataset.id`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Origin": "http://localhost:5500/",
+       // Authorization: 'Bearer ${localstorage.token}'
+       Authorization: `Bearer ${localStorage.token}`
+
+            }
+    })
+    .then(response => {
+      if (response.ok) {
+        e.target.parentElement.remove();
+      } else {
+        console.error("La suppression a échoué.");
+      }
+    })
+  }
+  
 
 
 
@@ -95,11 +124,11 @@ myReturnButton.addEventListener('click', returnModal);
 const addPictureBtn2 = document.querySelector('.add-picture-Btn2');
 const pictureInput = document.querySelector('.photo-input');
 
-addPictureBtn2.addEventListener('click', function() {
+addPictureBtn2.addEventListener('click', function () {
   pictureInput.click();
 });
 
-pictureInput.addEventListener('change', function() {
+pictureInput.addEventListener('change', function () {
   const selectedPhoto = pictureInput.files[0];
   // Faire quelque chose avec le fichier sélectionné, par exemple l'afficher ou l'envoyer vers un serveur
 });
@@ -137,16 +166,16 @@ fetch("http://localhost:5678/api/categories")
 
 
 // Fonction pour fermer les modal quand on clic à coté 
-//  const closeBody = document.querySelector('body');
+const closeBody = document.querySelector('body');
 
-//  function clickOnBody() {
-//    if( closeBody ) {
-//      myModal.style.display = "none";
-//  } else {
-//    myModal2.style.display = "none";
-
-//  }
-//  closeBody.addEventListener('click', clickOnBody);
+function clickOnBody(e) {
+  if (e.target === myModal) {
+    myModal.style.display = "none";
+  } else if (e.target === myModal2) {
+    myModal2.style.display = "none";
+  }
+}
+closeBody.addEventListener('click', clickOnBody);
 
 
 // Fonction pour fermer les modals quand on clique à l'extérieur

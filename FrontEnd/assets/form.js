@@ -47,21 +47,3 @@ form.addEventListener("submit", function (event) {
         };
     }
 });
-
-// localStorage.setItem("token", "mon-token");
-
-// const url = "http://localhost:5678/api/users/login";
-// const headers = {};
-
-// fetch(url, {
-//     headers: headers
-// })
-//     .then((response) => {
-//         // Traiter la réponse
-//     })
-//     .catch((error) => {
-//         // Gérer les erreurs
-//     });
-
-// // Suppression du token
-// localStorage.removeItem("token");
