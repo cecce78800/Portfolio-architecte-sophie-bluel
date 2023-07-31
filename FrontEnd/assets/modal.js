@@ -55,15 +55,16 @@ const imgCollectModal = fetch("http://localhost:5678/api/works")
 
   // Fonction pour supprimer les works
   function deleteWork(e) {
+    e.preventDefault()
 
-    fetch(`http://localhost:5678/api/works/e.target.dataset.id`, {
+    fetch(`http://localhost:5678/api/works/${e.target.dataset.id}`, {
+      // fetch(`http://localhost:5678/api/works/${imageId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
         "Origin": "http://localhost:5500/",
        // Authorization: 'Bearer ${localstorage.token}'
-       Authorization: `Bearer ${localStorage.token}`
-
+       "Authorization": `Bearer ${localStorage.token}`
             }
     })
     .then(response => {
@@ -75,7 +76,7 @@ const imgCollectModal = fetch("http://localhost:5678/api/works")
     })
   }
   
-
+  
 
 
 // Réccupérer élément pour le modal2
@@ -83,7 +84,8 @@ const modalContent = document.querySelector('.modal-content');
 const myModal2 = document.getElementById('modal2');
 const myCloseButton2 = document.querySelector('.close-button2');
 const myReturnButton = document.querySelector('.return-button');
-const modalContent2 = document.querySelector('.modal-content2')
+const modalContent2 = document.querySelector('.modal-content2');
+// const modal2Form = document.querySelector('.modal2-form');
 
 // Ajout du bouton "ajout de photo" modal1
 const addPictureBtn = document.createElement('button');
@@ -177,21 +179,37 @@ function clickOnBody(e) {
 }
 closeBody.addEventListener('click', clickOnBody);
 
+// Pour ajouter une photo
+const btnModal2 = document.querySelector('.btn-modal2'); 
 
-// Fonction pour fermer les modals quand on clique à l'extérieur
-// function clickOnBody() {
-//   myModal.style.display = "none";
-//   myModal2.style.display = "none";
-// }
 
-// // Ajout de l'écouteur d'événement de clic sur le body
-// body.addEventListener('click', clickOnBody);
+btnModal2.addEventListener('click', (e) => {
+  e.preventDefault();
 
-//     // function generateCategoryOptions(categories) {
-//     //   categories.forEach(category => {
-//     //     const option = document.createElement('option');
-//     //     option.value = category.id;
-//     //     option.textContent = category.name;
-//     //     categorySelect.appendChild(option);
-//     //   });
-//     // }
+  // Récupérer les données du formulaire
+  const titleForm = document.getElementById('title-input').value;;
+  const photoForm = document.querySelector('.photo-input').files[0];
+
+  // Créer un objet FormData
+  const formData = new FormData();
+  formData.append('title', titleForm);
+  formData.append('image', photoForm);
+  formData.append('category', inputCategory.value);
+
+  // Envoyer les données vers l'API
+  fetch('http://localhost:5678/api/works', {
+    method: 'POST',
+    headers: { // "Content-Type": "application/json",
+    "Origin": "http://localhost:5500/",
+    "Authorization": `Bearer ${localStorage.token}`
+  },
+    body: formData,
+  })
+  .then(response => console.log(response))
+  .then(data => {
+    // réponse du serveur
+    console.log('Photo ajoutée avec succès:', data);
+    // Réinitialiser formulaire
+    btnModal2.reset();
+  })
+});

@@ -489,10 +489,10 @@ footer nav ul {
 	background-color: #FFFFFF;
 	font-size: 14px;
 	color: #3D3D3D;
-	width: 84px;
+	width: 70px;
 	height: 18px;
 	padding: 0;
-
+	cursor: pointer;
 }
 
 .modal {
@@ -600,20 +600,32 @@ footer nav ul {
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+.close-button2 {
+	color: #000000;
+	float: right;
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.return-button {
+	cursor: pointer;
+	font-size: 24px;
+}
+
 #modal2 h3 {
 	font-size: 28px;
 	font-family: 'Work Sans';
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .modal-content2 {
 	background-color: #fefefe;
 	margin: 15%;
-	padding: 20px;
+	padding: 50px;
 	border: 1px solid #888;
 	max-width: 730px;
 	width: 50%;
-	height: 400px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -629,6 +641,7 @@ footer nav ul {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin: 0;
 }
 
 .modal2-picture i {
@@ -637,7 +650,6 @@ footer nav ul {
 	margin-top: 10px;
 	color: lightgrey;
 	stroke-width: 2px;
-	/* Remplacez la valeur par celle souhaitée */
 }
 
 .modal2-picture p {
@@ -657,22 +669,48 @@ footer nav ul {
 	margin-top: 30px;
 }
 
-.modal2-form {
+
+.form-container-modal2 {
 	display: flex;
 	flex-direction: column;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #B3B3B3;
+	width: 420px;
+}
+
+.form-container-modal2 label {
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+}
+
+#title-input {
+	width: 420px;
+	height: 51px;
+}
+
+.input-category {
+	width: 420px;
+	height: 51px;
 }
 
 .modal2-form-button {
 	background-color: #D6E0E6;
 }
 
-.close-button2 {
-	color: #000000;
-	float: right;
-	font-size: 24px;
-	font-weight: bold;
+.modal2-header {
+	width: 100%;
 }
 
+.btn-modal2 {
+	width: 237px;
+	height: 36px;
+	border-radius: 60px;
+	background-color: #B3B3B3;
+	color: white;
+	border: none;
+	margin-top: 40px;
+}
 
 /* header noir */
 .black-header {
@@ -682,7 +720,7 @@ footer nav ul {
 	height: 59px;
 	flex-direction: row;
 	justify-content: center;
-align-items: center;
+	align-items: center;
 }
 
 .black-header p {
@@ -697,8 +735,25 @@ align-items: center;
 
 .black-header-button {
 	border-radius: 60px;
-background-color: white;
-height: 30px;
-width: 160px;
-border: none;
+	background-color: white;
+	height: 30px;
+	width: 160px;
+	border: none;
 }
+
+.work-modal {
+	position: relative;
+  }
+  
+  .fa-trash-can {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	color: white;
+	background-color: #000000;
+	font-size: 14px;
+	border-radius: 50%;
+	padding: 5px;
+	cursor: pointer;
+  }
+  
